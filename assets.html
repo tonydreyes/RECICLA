@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Assets</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        input[type='file'] { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Manage Website Assets</h1>
+    <h2>Upload Asset</h2>
+    <form id="uploadForm">
+        <input type="file" id="assetFile" name="assetFile" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Uploaded Assets</h2>
+    <ul id="assetList">
+        <!-- List of uploaded assets will be displayed here -->
+    </ul>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('assetFile');
+            const file = fileInput.files[0];
+            // Upload functionality would go here
+            alert('File uploaded: ' + file.name);
+            fileInput.value = '';
+        });
+    </script>
+</body>
+</html>
