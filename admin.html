@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="#articles">Manage Articles</a></li>
+                <li><a href="#projects">Manage Projects</a></li>
+                <li><a href="#contacts">Manage Contacts</a></li>
+                <li><a href="#subscribers">Manage Subscribers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="articles">
+            <h2>Manage Articles</h2>
+            <!-- Form for Adding an Article -->
+            <form>
+                <input type="text" placeholder="Article Title" required>
+                <textarea placeholder="Article Content" required></textarea>
+                <button type="submit">Add Article</button>
+            </form>
+            <!-- Articles List -->
+            <div>
+                <h3>Article List</h3>
+                <ul>
+                    <!-- Dynamically generated article items will go here -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Manage Projects</h2>
+            <form>
+                <input type="text" placeholder="Project Name" required>
+                <textarea placeholder="Project Description" required></textarea>
+                <button type="submit">Add Project</button>
+            </form>
+            <div>
+                <h3>Project List</h3>
+                <ul>
+                    <!-- Dynamically generated project items will go here -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="contacts">
+            <h2>Manage Contacts</h2>
+            <form>
+                <input type="text" placeholder="Contact Name" required>
+                <input type="email" placeholder="Contact Email" required>
+                <button type="submit">Add Contact</button>
+            </form>
+            <div>
+                <h3>Contact List</h3>
+                <ul>
+                    <!-- Dynamically generated contact items will go here -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="subscribers">
+            <h2>Manage Subscribers</h2>
+            <form>
+                <input type="email" placeholder="Subscriber Email" required>
+                <button type="submit">Add Subscriber</button>
+            </form>
+            <div>
+                <h3>Subscriber List</h3>
+                <ul>
+                    <!-- Dynamically generated subscriber items will go here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
