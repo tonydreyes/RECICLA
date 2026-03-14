@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Artículo</title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<header>
+<h1>COOPRECICLAJE</h1>
+<nav>
+<a href="/">Inicio</a>
+<a href="/articles.html">Artículos</a>
+<a href="/projects.html">Proyectos</a>
+<a href="/history.html">Memoria histórica</a>
+<a href="/join.html">Unirse</a>
+<a href="/contact.html">Contacto</a>
+</nav>
+</header>
+
+<div id="article"></div>
+
+<script>
+
+const params=new URLSearchParams(location.search);
+const slug=params.get("slug");
+
+fetch("/api/articles/"+slug)
+.then(r=>r.json())
+.then(a=>{
+
+document.getElementById("article").innerHTML=`
+<h1>${a.title}</h1>
+<p>${a.date}</p>
+<p>${a.content}</p>
+`
+
+})
+
+</script>
+
+</body>
+</html>

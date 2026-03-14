@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Unirse</title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+
+<header>
+<h1>COOPRECICLAJE</h1>
+<nav>
+<a href="/">Inicio</a>
+<a href="/articles.html">Artículos</a>
+<a href="/projects.html">Proyectos</a>
+<a href="/history.html">Memoria histórica</a>
+<a href="/join.html">Unirse</a>
+<a href="/contact.html">Contacto</a>
+</nav>
+</header>
+
+
+<main>
+
+<h2>Unirse a la cooperativa</h2>
+
+<p>Registro RD$1000</p>
+<p>Cuota mensual RD$200</p>
+
+<form id="join">
+
+<input placeholder="Nombre" id="name">
+<input placeholder="Email" id="email">
+<input placeholder="Teléfono" id="phone">
+<input placeholder="Ciudad" id="city">
+
+<button>Enviar</button>
+
+</form>
+
+<script>
+
+document.getElementById("join").onsubmit=async e=>{
+e.preventDefault()
+
+const data={
+name:name.value,
+email:email.value,
+phone:phone.value,
+city:city.value
+}
+
+const r=await fetch("/api/members",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+})
+
+alert("Solicitud enviada")
+
+}
+
+</script>
+
+</main>
+
+</body>
+</html>

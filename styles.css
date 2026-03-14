@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contacto</title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+
+<header>
+<h1>COOPRECICLAJE</h1>
+<nav>
+<a href="/">Inicio</a>
+<a href="/articles.html">Artículos</a>
+<a href="/projects.html">Proyectos</a>
+<a href="/history.html">Memoria histórica</a>
+<a href="/join.html">Unirse</a>
+<a href="/contact.html">Contacto</a>
+</nav>
+</header>
+
+
+<main>
+
+<h2>Contacto</h2>
+
+<form id="contact">
+
+<input placeholder="Nombre" id="name">
+<input placeholder="Email" id="email">
+<input placeholder="Teléfono" id="phone">
+<textarea placeholder="Mensaje" id="message"></textarea>
+
+<button>Enviar</button>
+
+</form>
+
+<script>
+
+document.getElementById("contact").onsubmit=async e=>{
+
+e.preventDefault()
+
+await fetch("/api/contacts",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+name:name.value,
+email:email.value,
+phone:phone.value,
+message:message.value
+})
+})
+
+alert("Mensaje enviado")
+
+}
+
+</script>
+
+</main>
+
+</body>
+</html>
